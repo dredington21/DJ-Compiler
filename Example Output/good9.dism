@@ -1,0 +1,2419 @@
+     mov 7 65535   ; initializeFP
+     mov 6 65535       ; initializeSP
+     mov 5 1       ; initializeHP
+     mov 0 0       ; Allocate STACK SPACE FOR MAIN LOCALS
+     str 6 0 -852092880  ; Allocate STACK SPACE FOR MAIN LOCALS
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum0 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum0: mov 0 0
+     mov 0 0       ; BEGIN METHOD/MAIN-BLOCK BODY
+     sub 1 7 0; r1 = FP - offset
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum1 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum1: mov 0 0
+     mov 1 0
+     str 6 0 1
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum2 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum2: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt3
+     jmp 0 #labelNum3
+#halt3: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum3: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 4; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum5 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum5: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum6 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum6: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt7
+     jmp 0 #labelNum7
+#halt7: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum7: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum8 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum8: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum9 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum9: mov 0 0
+     jmp 0 #VTABLE
+#4: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 10; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum11 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum11: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum12 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum12: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt13
+     jmp 0 #labelNum13
+#halt13: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum13: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum14 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum14: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt15
+     jmp 0 #labelNum15
+#halt15: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum15: mov 0 0
+     mov 1 2
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum16 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum16: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum17 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum17: mov 0 0
+     jmp 0 #VTABLE
+#10: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 18; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum19 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum19: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum20 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum20: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt21
+     jmp 0 #labelNum21
+#halt21: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum21: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum22 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum22: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt23
+     jmp 0 #labelNum23
+#halt23: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum23: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum24 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum24: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt25
+     jmp 0 #labelNum25
+#halt25: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum25: mov 0 0
+     mov 1 3
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum26 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum26: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum27 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum27: mov 0 0
+     jmp 0 #VTABLE
+#18: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 28; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum29 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum29: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum30 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum30: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt31
+     jmp 0 #labelNum31
+#halt31: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum31: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum32 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum32: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt33
+     jmp 0 #labelNum33
+#halt33: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum33: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum34 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum34: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt35
+     jmp 0 #labelNum35
+#halt35: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum35: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum36 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum36: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt37
+     jmp 0 #labelNum37
+#halt37: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum37: mov 0 0
+     mov 1 4
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum38 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum38: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum39 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum39: mov 0 0
+     jmp 0 #VTABLE
+#28: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 40; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum41 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum41: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum42 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum42: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt43
+     jmp 0 #labelNum43
+#halt43: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum43: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum44 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum44: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt45
+     jmp 0 #labelNum45
+#halt45: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum45: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum46 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum46: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt47
+     jmp 0 #labelNum47
+#halt47: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum47: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum48 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum48: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt49
+     jmp 0 #labelNum49
+#halt49: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum49: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum50 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum50: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt51
+     jmp 0 #labelNum51
+#halt51: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum51: mov 0 0
+     mov 1 5
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum52 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum52: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum53 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum53: mov 0 0
+     jmp 0 #VTABLE
+#40: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 54; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum55 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum55: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum56 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum56: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt57
+     jmp 0 #labelNum57
+#halt57: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum57: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum58 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum58: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt59
+     jmp 0 #labelNum59
+#halt59: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum59: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum60 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum60: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt61
+     jmp 0 #labelNum61
+#halt61: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum61: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum62 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum62: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt63
+     jmp 0 #labelNum63
+#halt63: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum63: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum64 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum64: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt65
+     jmp 0 #labelNum65
+#halt65: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum65: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum66 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum66: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt67
+     jmp 0 #labelNum67
+#halt67: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum67: mov 0 0
+     mov 1 6
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum68 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum68: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum69 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum69: mov 0 0
+     jmp 0 #VTABLE
+#54: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 70; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum71 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum71: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum72 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum72: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt73
+     jmp 0 #labelNum73
+#halt73: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum73: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum74 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum74: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt75
+     jmp 0 #labelNum75
+#halt75: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum75: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum76 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum76: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt77
+     jmp 0 #labelNum77
+#halt77: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum77: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum78 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum78: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt79
+     jmp 0 #labelNum79
+#halt79: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum79: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum80 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum80: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt81
+     jmp 0 #labelNum81
+#halt81: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum81: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum82 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum82: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt83
+     jmp 0 #labelNum83
+#halt83: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum83: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum84 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum84: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt85
+     jmp 0 #labelNum85
+#halt85: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum85: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum86 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum86: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum87 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum87: mov 0 0
+     jmp 0 #VTABLE
+#70: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 88; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum89 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum89: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum90 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum90: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt91
+     jmp 0 #labelNum91
+#halt91: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum91: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum92 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum92: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt93
+     jmp 0 #labelNum93
+#halt93: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum93: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum94 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum94: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt95
+     jmp 0 #labelNum95
+#halt95: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum95: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum96 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum96: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt97
+     jmp 0 #labelNum97
+#halt97: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum97: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum98 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum98: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt99
+     jmp 0 #labelNum99
+#halt99: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum99: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum100 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum100: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt101
+     jmp 0 #labelNum101
+#halt101: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum101: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum102 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum102: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt103
+     jmp 0 #labelNum103
+#halt103: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum103: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum104 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum104: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt105
+     jmp 0 #labelNum105
+#halt105: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum105: mov 0 0
+     mov 1 2
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum106 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum106: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum107 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum107: mov 0 0
+     jmp 0 #VTABLE
+#88: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 108; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum109 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum109: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum110 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum110: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt111
+     jmp 0 #labelNum111
+#halt111: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum111: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum112 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum112: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt113
+     jmp 0 #labelNum113
+#halt113: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum113: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum114 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum114: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt115
+     jmp 0 #labelNum115
+#halt115: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum115: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum116 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum116: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt117
+     jmp 0 #labelNum117
+#halt117: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum117: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum118 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum118: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt119
+     jmp 0 #labelNum119
+#halt119: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum119: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum120 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum120: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt121
+     jmp 0 #labelNum121
+#halt121: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum121: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum122 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum122: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt123
+     jmp 0 #labelNum123
+#halt123: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum123: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum124 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum124: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt125
+     jmp 0 #labelNum125
+#halt125: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum125: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum126 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum126: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt127
+     jmp 0 #labelNum127
+#halt127: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum127: mov 0 0
+     mov 1 3
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum128 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum128: mov 0 0
+     mov 1 0
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum129 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum129: mov 0 0
+     jmp 0 #VTABLE
+#108: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 130; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum131 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum131: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum132 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum132: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt133
+     jmp 0 #labelNum133
+#halt133: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum133: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum134 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum134: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum135 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum135: mov 0 0
+     jmp 0 #VTABLE
+#130: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 136; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum137 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum137: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum138 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum138: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt139
+     jmp 0 #labelNum139
+#halt139: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum139: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum140 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum140: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum141 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum141: mov 0 0
+     jmp 0 #VTABLE
+#136: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 142; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum143 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum143: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum144 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum144: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt145
+     jmp 0 #labelNum145
+#halt145: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum145: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum146 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum146: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum147 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum147: mov 0 0
+     jmp 0 #VTABLE
+#142: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 148; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum149 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum149: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum150 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum150: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt151
+     jmp 0 #labelNum151
+#halt151: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum151: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum152 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum152: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum153 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum153: mov 0 0
+     jmp 0 #VTABLE
+#148: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 154; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum155 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum155: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum156 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum156: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt157
+     jmp 0 #labelNum157
+#halt157: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum157: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum158 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum158: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum159 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum159: mov 0 0
+     jmp 0 #VTABLE
+#154: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 160; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum161 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum161: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum162 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum162: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt163
+     jmp 0 #labelNum163
+#halt163: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum163: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum164 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum164: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum165 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum165: mov 0 0
+     jmp 0 #VTABLE
+#160: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 166; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum167 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum167: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum168 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum168: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt169
+     jmp 0 #labelNum169
+#halt169: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum169: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum170 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum170: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum171 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum171: mov 0 0
+     jmp 0 #VTABLE
+#166: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 172; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum173 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum173: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum174 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum174: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt175
+     jmp 0 #labelNum175
+#halt175: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum175: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum176 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum176: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum177 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum177: mov 0 0
+     jmp 0 #VTABLE
+#172: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     str 6 0 178; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum179 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum179: mov 0 0
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum180 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum180: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt181
+     jmp 0 #labelNum181
+#halt181: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum181: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum182 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum182: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt183
+     jmp 0 #labelNum183
+#halt183: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum183: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum184 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum184: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt185
+     jmp 0 #labelNum185
+#halt185: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum185: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum186 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum186: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt187
+     jmp 0 #labelNum187
+#halt187: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum187: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum188 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum188: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt189
+     jmp 0 #labelNum189
+#halt189: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum189: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum190 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum190: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt191
+     jmp 0 #labelNum191
+#halt191: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum191: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum192 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum192: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt193
+     jmp 0 #labelNum193
+#halt193: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum193: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum194 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum194: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt195
+     jmp 0 #labelNum195
+#halt195: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum195: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum196 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum196: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt197
+     jmp 0 #labelNum197
+#halt197: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum197: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum198 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum198: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt199
+     jmp 0 #labelNum199
+#halt199: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum199: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum200 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum200: mov 0 0
+     mov 1 2
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum201 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum201: mov 0 0
+     jmp 0 #VTABLE
+#178: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum202 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum202: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt203
+     jmp 0 #labelNum203
+#halt203: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum203: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum204 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum204: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt205
+     jmp 0 #labelNum205
+#halt205: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum205: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum206 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum206: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt207
+     jmp 0 #labelNum207
+#halt207: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum207: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum208 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum208: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt209
+     jmp 0 #labelNum209
+#halt209: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum209: mov 0 0
+     lod 1 6 1; load base address of E1
+     add 1 1 0; r1 = offset + base address 
+     str 6 1 1; store A on stack
+     lod 1 6 1; load address of A
+     lod 2 6 2; load value of r
+     str 2 1 0; store r at [A]
+     mov 1 1
+     add 6 6 1; #SP++
+     mov 1 1
+     add 6 6 1; #SP++
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum210 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum210: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt211
+     jmp 0 #labelNum211
+#halt211: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum211: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum212 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum212: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt213
+     jmp 0 #labelNum213
+#halt213: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum213: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum214 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum214: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     mov 1 1
+     add 6 6 1; #SP++
+     sub 1 7 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum215 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum215: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt216
+     jmp 0 #labelNum216
+#halt216: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum216: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum217 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum217: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt218
+     jmp 0 #labelNum218
+#halt218: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum218: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum219 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum219: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt220
+     jmp 0 #labelNum220
+#halt220: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum220: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum221 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum221: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt222
+     jmp 0 #labelNum222
+#halt222: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum222: mov 0 0
+     mov 1 1
+     add 6 6 1; #SP++
+     lod 1 6 0; load mem of r1
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum223 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum223: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     hlt 0     ; normal program termination
+#CM10: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum224 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum224: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum225 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum225: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt226
+     jmp 0 #labelNum226
+#halt226: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum226: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     mov 1 1
+     add 6 6 1; #SP++
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 1; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum227 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum227: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt228
+     jmp 0 #labelNum228
+#halt228: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum228: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM11: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum229 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum229: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 1
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum230 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum230: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM12: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum231 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum231: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     str 6 0 232; push retLabel on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum233 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum233: mov 0 0
+     sub 1 7 0; r1 = FP - 2
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum234 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum234: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt235
+     jmp 0 #labelNum235
+#halt235: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum235: mov 0 0
+     mov 1 1
+     str 6 0 1; push class number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum236 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum236: mov 0 0
+     mov 1 1
+     str 6 0 1; push method number on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum237 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum237: mov 0 0
+     jmp 0 #VTABLE
+#232: mov 0 0
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM20: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum238 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum238: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum239 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum239: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt240
+     jmp 0 #labelNum240
+#halt240: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum240: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM21: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum241 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum241: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 2
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum242 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum242: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM30: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum243 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum243: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum244 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum244: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt245
+     jmp 0 #labelNum245
+#halt245: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum245: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM31: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum246 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum246: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 3
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum247 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum247: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM40: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum248 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum248: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum249 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum249: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt250
+     jmp 0 #labelNum250
+#halt250: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum250: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM41: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum251 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum251: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 4
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum252 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum252: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM50: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum253 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum253: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum254 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum254: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt255
+     jmp 0 #labelNum255
+#halt255: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum255: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM51: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum256 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum256: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 5
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum257 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum257: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM60: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum258 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum258: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     sub 1 7 1; r1 = (this)
+     lod 1 1 0; load 'this' address
+     add 1 1 0; r1 = offset + base address 
+     lod 1 1 0; load mem at [A]
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum259 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum259: mov 0 0
+     add 1 6 1; 1 = SP + 1
+     lod 1 1 0; 1 = M(SP+1)
+     beq 1 0 #halt260
+     jmp 0 #labelNum260
+#halt260: mov 0 0
+     mov 1 77
+     hlt 1; Null pointer dereference
+#labelNum260: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
+#CM61: mov 0 0
+     str 6 0 7   ; Save old FP
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum261 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum261: mov 0 0
+     add 6 7 0   ; Have SP point to FP
+     mov 1 2     ; 
+     sub 7 7 1   ; FP = FP - 2 to point to RA
+     mov 1 6
+     str 6 0 1; M[SP] <-R1 (a nat literal)
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum262 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum262: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     lod 1 7 1  ; load return addr (M(FP-1))
+     lod 7 7 2  ; Restore caller's FP (M(FP-2))
+     lod 6 7 3  ; Restore caller's SP (M(FP-3))
+     jmp 0 1     ; return to caller
