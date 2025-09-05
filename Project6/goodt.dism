@@ -1,0 +1,45 @@
+     mov 7 65535   ; initialize FP
+     mov 6 65535   ; initialize SP
+     mov 5 1       ; initialize HP
+     str 6 0 0  ; Allocate stack space for main local 0
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum0 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum0: mov 0 0
+     mov 0 0       ; BEGIN METHOD/MAIN-BLOCK BODY
+     sub 1 7 0; r1 = FP - offset
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum1 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum1: mov 0 0
+     mov 1 0
+     str 6 0 1
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum2 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum2: mov 0 0
+     lod 1 6 1; load value r
+     lod 2 6 2; get address A
+     str 2 1 0; store r at [A]
+     mov 1 1
+     add 6 6 1; #SP++
+     sub 1 6 0; r1 = FP - -1
+     lod 1 1 0; r1 = M(r1)
+     str 6 0 1; push r1 on stack
+     mov 1 1
+     sub 6 6 1; #SP--
+     blt 5 6 #labelNum3 ; branch if HP<SP
+     mov 1 77 ; error code 77 no stack memory
+     hlt 1; out of stack memory!!
+#labelNum3: mov 0 0
+     lod 1 6 1; load mem of r1 for printing
+     ptn 1
+     hlt 0     ; normal program termination
